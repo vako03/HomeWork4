@@ -18,25 +18,37 @@ class MainActivity : AppCompatActivity() {
         val textView: TextView = findViewById(R.id.textView)
         val win:TextView = findViewById(R.id.win)
 
+
         button1.setOnClickListener {
             i ++
             textView.text=i.toString()
+            if (i<50){
+                win.isVisible = false
+            }else{
+                win.isVisible = i>=50
+            }
 
         }
 
         button2.setOnClickListener {
             if (i > 0){
                 i--
-            }else
+            }else{
                 i=0
-
-
+            }
             textView.text=i.toString()
+            if (i<50){
+                win.isVisible = false
+            }else{
+                win.isVisible = i>=50
+            }
+
+
         }
 
-     }
 
     }
+}
 
 
 
